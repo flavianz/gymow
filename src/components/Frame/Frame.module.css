@@ -19,28 +19,37 @@
 }
 .mainLink {
     font-weight: 500;
-}
-.mainLink:hover {
-    color: var(--primary);
-}
-#navbarItem:hover .subContainer {
+    font-size: 1.2rem;
+    width: 100%;
     display: block;
 }
+#navbarItem:hover  {
+    cursor: pointer;
+    .subContainer {
+        display: block;
+    }
+}
 .subContainer {
-    border-left: 1px solid var(--text);
+    border-left: 1px solid #999999;
     margin-left: 0.5vw;
-    padding-left: 0.5vw;
+    padding-left: 1vw;
 }
 #navbar {
-    min-width: 10vw;
+    width: 10vw;
     padding: 2vh 2vw;
     border-right: 1px #999999 solid;
     overflow: auto;
 }
 .subNav {
     font-weight: 300;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    width: 100%;
+    display: block;
+    margin: 1vh 0;
 }
 .subNav:hover {
     color: var(--primary);
+}
+#content {
+    flex: 1;
 }

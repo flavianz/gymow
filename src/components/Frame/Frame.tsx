@@ -10,38 +10,58 @@ const links: {
 } = {
     Schulleben: {
         main: "/schulleben",
-        Leitbild: "/leitbild",
-        Organisationseinheit: "/organisationseinheit",
-        Terminkalender: "/leitbild",
-        Beratung: "/leitbild",
-        Kulturelles: "/leitbild",
-        Sportliches: "/leitbild",
-        Mediothek: "/leitbild",
-        Förderverein: "/leitbild",
+        Leitbild: "/schulleben/leitbild",
+        Organisationseinheit: "/schulleben/organisationseinheit",
+        Terminkalender: "/schulleben/terminkalender",
+        Beratung: "/schulleben/beratung",
+        Kulturelles: "/schulleben/kulturelles",
+        Sportliches: "/schulleben/sportliches",
+        Mediothek: "/schulleben/mediothek",
+        Förderverein: "/schulleben/förderverein",
     },
     Maturitätsabteilung: {
-        main: "/schulleben",
-        Leitbild: "/leitbild",
+        main: "/ma/maturitaesabteilung",
+        Aufnahmebedingungen: "/ma/aufnahmebedingungen",
+        Profile: "/ma/profile",
+        Stundentafel: "/ma/stundentafel",
+        "Wahlkurs & Ergänzungsfach": "/ma/wahlkurs-ergaenzungsfach",
+        Immersionsunterricht: "/ma/immersionsunterricht",
+        Sonderwoche: "/ma/sonderwoche",
+        Maturaarbeit: "/ma/maturaarbeit",
+        Schülerprojekte: "/ma/schuelerprojekte",
+        Maturitätsprüfung: "/ma/maturitaetspruefung",
+        Kosten: "/ma/kosten",
     },
     FMS: {
-        main: "/schulleben",
-        Leitbild: "/leitbild",
+        main: "/fms",
+        Aufnahmebedingungen: "/ma/aufnahmebedingungen",
+        Berufsfelder: "/ma/berufsfelder",
+        Stundentafel: "/ma/stundentafel",
+        Lehrpläne: "/ma/lehrplaene",
+        "Spezielle Unterichtsformen": "/ma/spezielle-unterichtsformen",
+        Klassenlager: "/ma/klassenlager",
+        "Selbstständige Arbeit": "/ma/selbststaendige-arbeit",
+        Fachmittelschulausweis: "/ma/fachmittelschulausweis",
+        Fachmaturität: "/ma/fachmaturitaet",
+        Kosten: "/ma/kosten",
+        "FMS Abschlussprüfungen": "/ma/fms-abschlussprüfungen",
     },
     Unterricht: {
-        main: "/schulleben",
-        Leitbild: "/leitbild",
+        main: "/unterricht",
+        Fächer: "/unterricht/faecher",
+        Freifächer: "/unterricht/freifaecher",
+        Austausch: "/unterricht/austausch",
+        Begabtenförderung: "/unterricht/begabtenförderung",
+        "Lernen mit BYOD": "/unterricht/byod",
     },
-    Downloads: {
-        main: "/schulleben",
-        Leitbild: "/leitbild",
+    Dokumente: {
+        main: "/dokumente",
     },
     SchulNetz: {
-        main: "/schulleben",
-        Leitbild: "/leitbild",
+        main: "https://portal.sbl.ch/gymow",
     },
     "ICT-Support": {
-        main: "/schulleben",
-        Leitbild: "/leitbild",
+        main: "/ict-support",
     },
 };
 
@@ -66,16 +86,13 @@ export default function Frame({ children }: { children: any }) {
                                             return undefined;
                                         }
                                         return (
-                                            <>
-                                                <Link
-                                                    to={sub[1]}
-                                                    className={styles.subNav}
-                                                    key={key}
-                                                >
-                                                    {sub[0]}
-                                                </Link>
-                                                <br />{" "}
-                                            </>
+                                            <Link
+                                                to={sub[1]}
+                                                className={styles.subNav}
+                                                key={key}
+                                            >
+                                                {sub[0]}
+                                            </Link>
                                         );
                                     })}
                                 </div>

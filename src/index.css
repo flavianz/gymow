@@ -4,7 +4,7 @@
   font-weight: 400;
 
   color-scheme: light;
-  --text: #021e19;
+  --text: #011310;
   --background: #f3f6f6;
   --primary: #0eb395;
   --secondary: #c2dcd7;
@@ -28,6 +28,7 @@ a {
 }
 a:hover {
   cursor: pointer;
+  color: var(--primary);
 }
 body {
   margin: 0;

@@ -1,4 +1,19 @@
-#container {
-    height: 100vh;
-    width: 100vw;
+#banner {
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+    opacity: 80%;
+}
+#bannerContainer {
+    text-align: center;
+    position: relative;
+}
+#title {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--text);
+    text-shadow: #ededed 1px 0 10px;
+    font-size: 5vh;
 }
