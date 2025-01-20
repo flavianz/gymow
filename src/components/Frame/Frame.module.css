@@ -1,0 +1,46 @@
+#container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+#lower {
+    flex: 1;
+    width: 100vw;
+    display: flex;
+}
+#navbarItem {
+    margin: 2vh 0;
+    .subContainer {
+        display: none;
+    }
+}
+.mainLink {
+    font-weight: 500;
+}
+.mainLink:hover {
+    color: var(--primary);
+}
+#navbarItem:hover .subContainer {
+    display: block;
+}
+.subContainer {
+    border-left: 1px solid var(--text);
+    margin-left: 0.5vw;
+    padding-left: 0.5vw;
+}
+#navbar {
+    min-width: 10vw;
+    padding: 2vh 2vw;
+    border-right: 1px #999999 solid;
+    overflow: auto;
+}
+.subNav {
+    font-weight: 300;
+    font-size: 0.9rem;
+}
+.subNav:hover {
+    color: var(--primary);
+}
