@@ -100,7 +100,14 @@ export default function Frame({ children }: { children: any }) {
                         );
                     })}
                 </div>
-                <div id={styles.content}>{children}</div>
+                <div id={styles.content}>
+                    {children}
+                    <div id={styles.footerContainer}>
+                        <p>© {new Date().getFullYear()} Flavian Züllig</p>{" "}
+                        <p>sekretariat.gymow@sbl.ch</p>
+                        <p>061 552 18 18</p>
+                    </div>
+                </div>
             </div>
         </div>
     );

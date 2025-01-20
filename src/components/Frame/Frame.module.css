@@ -1,15 +1,16 @@
 #container {
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
     margin: 0;
 }
 #lower {
     flex: 1;
     width: 100vw;
     display: flex;
+    overflow: hidden;
 }
 #navbarItem {
     margin: 2vh 0;
@@ -52,4 +53,15 @@
 }
 #content {
     flex: 1;
+    overflow: auto;
+}
+#footerContainer {
+    background: var(--secondary);
+    display: flex;
+    padding: 2vh 0;
+    width: 100%;
+    justify-content: space-evenly;
+    p {
+        margin: 0;
+    }
 }
