@@ -1,6 +1,6 @@
 import styles from "./Frame.module.css";
 import Header from "../Header/Header.tsx";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const links: {
     [key: string]: {
@@ -44,11 +44,11 @@ const links: {
         Sportliches: [
             ["Allgemeines", "/schulleben/sportliches"],
             ["Fussball", "/schulleben/sportliches/fussball"],
-            ["Gymnasiade", "/schulleben/gymnasiade"],
-            ["Schneesportlager", "/schulleben/schneesportlager"],
-            ["Tenero", "/schulleben/tenero"],
-            ["Unihockey", "/schulleben/unihockey"],
-            ["Volleyball", "/schulleben/volleyball"],
+            ["Gymnasiade", "/schulleben/sportliches/gymnasiade"],
+            ["Schneesportlager", "/schulleben/sportliches/schneesportlager"],
+            ["Tenero", "/schulleben/sportliches/tenero"],
+            ["Unihockey", "/schulleben/sportliches/unihockey"],
+            ["Volleyball", "/schulleben/sportliches/volleyball"],
         ],
         Mediothek: "/schulleben/mediothek",
         "Cucina Collinare": "/schulleben/cucina-collinare",
@@ -140,6 +140,7 @@ const links: {
 };
 
 export default function Frame({ children }: { children: any }) {
+    const location = useLocation();
     return (
         <div id={styles.container}>
             <Header />
@@ -159,6 +160,17 @@ export default function Frame({ children }: { children: any }) {
                                         if (sub[0] == "main") {
                                             return undefined;
                                         }
+                                        const selected =
+                                            typeof sub[1] === "string"
+                                                ? location.pathname.startsWith(
+                                                      sub[1],
+                                                  )
+                                                : Object.values(sub[1])
+                                                      .map((i) => i[1])
+                                                      .includes(
+                                                          location.pathname,
+                                                      );
+
                                         return (
                                             <Link
                                                 to={
@@ -166,7 +178,13 @@ export default function Frame({ children }: { children: any }) {
                                                         ? sub[1]
                                                         : sub[1][0][1]
                                                 }
-                                                className={styles.subNav}
+                                                className={
+                                                    styles.subNav +
+                                                    " " +
+                                                    (selected
+                                                        ? styles.linkOpen
+                                                        : "")
+                                                }
                                                 key={key}
                                             >
                                                 {sub[0]}
@@ -179,14 +197,51 @@ export default function Frame({ children }: { children: any }) {
                     })}
                 </div>
                 <div id={styles.content}>
-                    {children}
+                    <div>
+                        {getTabBar(location.pathname)}
+                        {children}
+                    </div>
                     <div id={styles.footerContainer}>
-                        <p>© {new Date().getFullYear()} Flavian Züllig</p>{" "}
+                        <p>© {new Date().getFullYear()} Flavian Züllig</p>
                         <p>sekretariat.gymow@sbl.ch</p>
                         <p>061 552 18 18</p>
                     </div>
                 </div>
             </div>
+        </div>
+    );
+}
+
+function getTabBar(pathname: string) {
+    let tabs: string[][] = [];
+    for (let section of Object.values(links)) {
+        if (Object.values(section).includes(pathname)) {
+            return undefined;
+        }
+        let currTabs = Object.values(section)
+            .filter((i) => typeof i === "object")
+            .filter((i) => i.map((a) => a[1]).includes(pathname));
+        if (currTabs.length > 0) {
+            tabs = currTabs[0];
+            break;
+        }
+    }
+    return (
+        <div id={styles.tabContainer}>
+            {tabs.map((tab, key) => {
+                return (
+                    <Link
+                        to={tab[1]}
+                        className={styles.tabItemContainer}
+                        key={key}
+                    >
+                        {tab[0]}
+                        {tab[1] === pathname && (
+                            <div className={styles.selector}></div>
+                        )}
+                    </Link>
+                );
+            })}
         </div>
     );
 }

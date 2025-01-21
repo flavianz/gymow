@@ -25,7 +25,7 @@
     width: 100%;
     display: block;
 }
-#navbarItem:hover  {
+#navbarItem:hover,#navbarItem:has(.linkOpen)  {
     cursor: pointer;
     .subContainer {
         height: auto;
@@ -67,4 +67,25 @@
     p {
         margin: 0;
     }
+}
+.linkOpen {
+    color: var(--primary);
+}
+#tabContainer {
+    display: flex;
+    width: 100%;
+    margin: 1vh 0;
+    border-bottom: 1px #e3e3e3 solid;
+}
+.tabItemContainer {
+    padding: 1vh 2vw;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+.selector {
+    height: 4px;
+    width: 100%;
+    background: var(--primary);
+    margin-top: 0.7vh;
+    border-radius: 0.7vh;
 }

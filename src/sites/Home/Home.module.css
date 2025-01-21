@@ -13,7 +13,7 @@
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: var(--text);
+    color: #222222;
     text-shadow: #ededed 1px 0 10px;
     font-size: 5vh;
 }

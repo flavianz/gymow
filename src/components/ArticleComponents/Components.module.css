@@ -1,0 +1,21 @@
+.container {
+    padding: 4vh 6vw;
+}
+h3 {
+    color: var(--primary);
+    margin: 4vh 0 2vh 0;
+}
+.span {
+    font-size: 1.2rem;
+    line-height: 2rem;
+}
+.imageArticle {
+    display: flex;
+    align-items: flex-start;
+}
+.imageArticleText {
+
+}
+.imageArticlePic {
+    width: 20vw;
+}
