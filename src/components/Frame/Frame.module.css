@@ -15,7 +15,8 @@
 #navbarItem {
     margin: 2vh 0;
     .subContainer {
-        display: none;
+        height: 0;
+        overflow: hidden;
     }
 }
 .mainLink {
@@ -27,7 +28,7 @@
 #navbarItem:hover  {
     cursor: pointer;
     .subContainer {
-        display: block;
+        height: auto;
     }
 }
 .subContainer {
@@ -36,17 +37,16 @@
     padding-left: 1vw;
 }
 #navbar {
-    width: 10vw;
     padding: 2vh 2vw;
     border-right: 1px #999999 solid;
-    overflow: auto;
+    overflow-y: scroll;
 }
 .subNav {
     font-weight: 300;
     font-size: 1rem;
     width: 100%;
     display: block;
-    margin: 1vh 0;
+    padding: 0.5vh 0;
 }
 .subNav:hover {
     color: var(--primary);
@@ -54,6 +54,9 @@
 #content {
     flex: 1;
     overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 #footerContainer {
     background: var(--secondary);

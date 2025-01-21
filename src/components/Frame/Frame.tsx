@@ -5,18 +5,53 @@ import { Link } from "react-router-dom";
 const links: {
     [key: string]: {
         main: string;
-        [other: string]: string;
+        [other: string]: [string, string][] | string;
     };
 } = {
     Schulleben: {
         main: "/schulleben",
         Leitbild: "/schulleben/leitbild",
-        Organisationseinheit: "/schulleben/organisationseinheit",
+        Organisationseinheit: [
+            [
+                "Mitwirkungsstruktur",
+                "/schulleben/organisationseinheit/mitwirkungsstruktur",
+            ],
+            ["Schulrat", "/schulleben/organisationseinheit/schulrat"],
+            ["Schulleitung", "/schulleben/organisationseinheit/schulleitung"],
+            [
+                "Schuladministration",
+                "/schulleben/organisationseinheit/schuladministration",
+            ],
+            ["SOGO", "/schulleben/organisationseinheit/sogo"],
+            ["Dienste", "/schulleben/organisationseinheit/dienste"],
+        ],
         Terminkalender: "/schulleben/terminkalender",
-        Beratung: "/schulleben/beratung",
-        Kulturelles: "/schulleben/kulturelles",
-        Sportliches: "/schulleben/sportliches",
+        Beratung: [
+            ["Intern", "/schulleben/beratung/intern"],
+            ["Extern", "/schulleben/beratung/extern"],
+        ],
+        Kulturelles: [
+            ["Blickfeld", "/schulleben/kulturelles/blickfeld"],
+            ["Chor", "/schulleben/kulturelles/chor"],
+            ["FMS-Theater", "/schulleben/kulturelles/fms-theater"],
+            ["Kulturagenda", "/schulleben/kulturelles/kulturagenda"],
+            [
+                "Neue Pavillon Konzerte",
+                "/schulleben/kulturelles/neue-pavillon-konzerte",
+            ],
+            ["Theatergruppe", "/schulleben/kulturelles/theatergruppe"],
+        ],
+        Sportliches: [
+            ["Allgemeines", "/schulleben/sportliches"],
+            ["Fussball", "/schulleben/sportliches/fussball"],
+            ["Gymnasiade", "/schulleben/gymnasiade"],
+            ["Schneesportlager", "/schulleben/schneesportlager"],
+            ["Tenero", "/schulleben/tenero"],
+            ["Unihockey", "/schulleben/unihockey"],
+            ["Volleyball", "/schulleben/volleyball"],
+        ],
         Mediothek: "/schulleben/mediothek",
+        "Cucina Collinare": "/schulleben/cucina-collinare",
         Förderverein: "/schulleben/förderverein",
     },
     Maturitätsabteilung: {
@@ -29,22 +64,54 @@ const links: {
         Sonderwoche: "/ma/sonderwoche",
         Maturaarbeit: "/ma/maturaarbeit",
         Schülerprojekte: "/ma/schuelerprojekte",
-        Maturitätsprüfung: "/ma/maturitaetspruefung",
+        Maturitätsprüfung: [
+            ["Maturitätsprüfung", "/ma/maturitaetspruefung"],
+            ["Notenberechnung", "/ma/maturitaetspruefung/notenberechnung"],
+            [
+                "Maturitätsprüfungskonzepte",
+                "/ma/maturitaetspruefung/maturitaetspruefungskonzepte",
+            ],
+
+            [
+                "Aktuelle Prüfungen",
+                "/ma/maturitaetspruefung/aktuelle-pruefungen",
+            ],
+        ],
         Kosten: "/ma/kosten",
     },
     FMS: {
         main: "/fms",
         Aufnahmebedingungen: "/ma/aufnahmebedingungen",
-        Berufsfelder: "/ma/berufsfelder",
-        Stundentafel: "/ma/stundentafel",
-        Lehrpläne: "/ma/lehrplaene",
-        "Spezielle Unterichtsformen": "/ma/spezielle-unterichtsformen",
-        Klassenlager: "/ma/klassenlager",
-        "Selbstständige Arbeit": "/ma/selbststaendige-arbeit",
-        Fachmittelschulausweis: "/ma/fachmittelschulausweis",
-        Fachmaturität: "/ma/fachmaturitaet",
-        Kosten: "/ma/kosten",
-        "FMS Abschlussprüfungen": "/ma/fms-abschlussprüfungen",
+        Berufsfelder: [
+            ["Die Berufsfelder", "/fms/berufsfelder"],
+            [
+                "Gesundheit / Naturwissenschaften",
+                "/fms/berufsfelder/gesundheit-naturwissenschaften",
+            ],
+            ["Gestaltung und Kunst", "/fms/berufsfelder/gestaltung-und-kunst"],
+            ["Pädagogik", "/fms/berufsfelder/paedagogik"],
+            ["Soziale Arbeit", "/fms/berufsfelder/soziale-arbeit"],
+            ["Berufsfeld Plus-Kurse", "/fms/berufsfelder/plus-kurse"],
+        ],
+        Stundentafel: "/fms/stundentafel",
+        Lehrpläne: "/fms/lehrplaene",
+        "Spezielle Unterichtsformen": "/fms/spezielle-unterichtsformen",
+        Klassenlager: "/fms/klassenlager",
+        "Selbstständige Arbeit": "/fms/selbststaendige-arbeit",
+        Fachmittelschulausweis: "/fms/fachmittelschulausweis",
+        Fachmaturität: [
+            ["Fachmaturitaet", "/fms/fachmaturitaet"],
+            [
+                "FM - Gesundheit / Naturwissenschaften",
+                "/fms/fm-gesundheit-naturwissenschaften",
+            ],
+            ["FM - Gestaltung und Kunst ", "/fms/fm-gestaltung-und-kunst"],
+            ["FM - Pädagogik", "/fms/fm-paedagogik"],
+            ["FM - Soziale Arbeit", "/fms/soziale-arbeit"],
+            ["Fachmaturitaetsarbeit", "/fms/fachmaturitaetsarbeit"],
+        ],
+        Kosten: "/fms/kosten",
+        "FMS Abschlussprüfungen": "/fms/fms-abschlusspruefungen",
     },
     Unterricht: {
         main: "/unterricht",
@@ -52,12 +119,19 @@ const links: {
         Freifächer: "/unterricht/freifaecher",
         Austausch: "/unterricht/austausch",
         Begabtenförderung: "/unterricht/begabtenförderung",
-        "Lernen mit BYOD": "/unterricht/byod",
+        "Lernen mit BYOD": [
+            ["Lernen mit BYOD", "/unterricht/lernen-mit-byod"],
+            [
+                "Geräteempfehlungen",
+                "/unterricht/lernen-mit-byod/geraeteempfehlungen",
+            ],
+            ["Gerät kaufen", "/unterricht/lernen-mit-byod/geraet-kaufen"],
+        ],
     },
     Dokumente: {
         main: "/dokumente",
     },
-    SchulNetz: {
+    schulNetz: {
         main: "https://portal.sbl.ch/gymow",
     },
     "ICT-Support": {
@@ -87,7 +161,11 @@ export default function Frame({ children }: { children: any }) {
                                         }
                                         return (
                                             <Link
-                                                to={sub[1]}
+                                                to={
+                                                    typeof sub[1] === "string"
+                                                        ? sub[1]
+                                                        : sub[1][0][1]
+                                                }
                                                 className={styles.subNav}
                                                 key={key}
                                             >
