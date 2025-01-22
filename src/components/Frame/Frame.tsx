@@ -25,7 +25,6 @@ const links: {
             ["SOGO", "/schulleben/organisationseinheit/sogo"],
             ["Dienste", "/schulleben/organisationseinheit/dienste"],
         ],
-        Terminkalender: "/schulleben/terminkalender",
         Beratung: [
             ["Intern", "/schulleben/beratung/intern"],
             ["Extern", "/schulleben/beratung/extern"],
@@ -196,15 +195,16 @@ export default function Frame({ children }: { children: any }) {
                         );
                     })}
                 </div>
-                <div id={styles.content}>
-                    <div>
-                        {getTabBar(location.pathname)}
+
+                <div id={styles.contentTab}>
+                    <div>{getTabBar(location.pathname)}</div>
+                    <div id={styles.content}>
                         {children}
-                    </div>
-                    <div id={styles.footerContainer}>
-                        <p>© {new Date().getFullYear()} Flavian Züllig</p>
-                        <p>sekretariat.gymow@sbl.ch</p>
-                        <p>061 552 18 18</p>
+                        <div id={styles.footerContainer}>
+                            <p>© {new Date().getFullYear()} Flavian Züllig</p>
+                            <p>sekretariat.gymow@sbl.ch</p>
+                            <p>061 552 18 18</p>
+                        </div>
                     </div>
                 </div>
             </div>
