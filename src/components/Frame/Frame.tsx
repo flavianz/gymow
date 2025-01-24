@@ -31,7 +31,6 @@ const links: {
         ],
         Kulturelles: [
             ["Blickfeld", "/schulleben/kulturelles/blickfeld"],
-            ["Chor", "/schulleben/kulturelles/chor"],
             ["FMS-Theater", "/schulleben/kulturelles/fms-theater"],
             ["Kulturagenda", "/schulleben/kulturelles/kulturagenda"],
             [
@@ -51,7 +50,7 @@ const links: {
         ],
         Mediothek: "/schulleben/mediothek",
         "Cucina Collinare": "/schulleben/cucina-collinare",
-        Förderverein: "/schulleben/förderverein",
+        Förderverein: "/schulleben/foerderverein",
     },
     Maturitätsabteilung: {
         main: "/ma/maturitaesabteilung",

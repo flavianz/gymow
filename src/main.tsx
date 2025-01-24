@@ -4,13 +4,20 @@ import "./index.css";
 import { createHashRouter, RouterProvider } from "react-router-dom";
 import Home from "./sites/Home/Home.tsx";
 import {
+    Blickfeld,
+    CucinaCollinare,
     Dienste,
     Extern,
+    FMSTheater,
+    Foerderverein,
     Fussball,
     Gymnasiade,
     Intern,
+    Kulturagenda,
     Leitbild,
+    Mediothek,
     Mitwirkungsstruktur,
+    NeuePavillonKonzerte,
     Schneesportlager,
     Schuladministration,
     Schulleben,
@@ -93,8 +100,36 @@ const router = createHashRouter([
         element: <Extern />,
     },
     {
-        path: "/schulleben/kulturelles/theater",
+        path: "/schulleben/kulturelles/blickfeld",
+        element: <Blickfeld />,
+    },
+    {
+        path: "/schulleben/kulturelles/theatergruppe",
         element: <Theater />,
+    },
+    {
+        path: "/schulleben/kulturelles/fms-theater",
+        element: <FMSTheater />,
+    },
+    {
+        path: "/schulleben/kulturelles/kulturagenda",
+        element: <Kulturagenda />,
+    },
+    {
+        path: "/schulleben/kulturelles/neue-pavillon-konzerte",
+        element: <NeuePavillonKonzerte />,
+    },
+    {
+        path: "/schulleben/mediothek",
+        element: <Mediothek />,
+    },
+    {
+        path: "/schulleben/cucina-collinare",
+        element: <CucinaCollinare />,
+    },
+    {
+        path: "/schulleben/foerderverein",
+        element: <Foerderverein />,
     },
 ]);
 

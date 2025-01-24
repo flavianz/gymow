@@ -454,6 +454,32 @@ export function Extern() {
     );
 }
 
+export function Blickfeld() {
+    return (
+        <Frame>
+            <Container>
+                <Title>Blickfeld</Title>
+                <ImageArticle
+                    images={[
+                        "https://www.gymoberwil.ch/fileadmin/_processed_/2/e/csm_Nr_43_af6585821c.jpg",
+                    ]}
+                >
+                    Die Publikation blickfeld erscheint seit 2001 zweimal pro
+                    Schuljahr, jeweils im Frühling und Herbst. Sie bietet einen
+                    Rück- und Ausblick auf das Schulleben, berichtet über
+                    aktuelle Entwicklungen und Projekte, beleuchtet
+                    Veranstaltungen und porträtiert ausgewählte Personen aus der
+                    Schüler- und Lehrerschaft. Zudem würdigt sie besondere
+                    Erfolge in verschiedenen Disziplinen. Als Ersatz für den
+                    traditionellen Jahresbericht wird blickfeld an Eltern,
+                    Mitglieder des Fördervereins, Behörden sowie an Lehrpersonen
+                    und interessierte Einzelpersonen verteilt.
+                </ImageArticle>
+            </Container>
+        </Frame>
+    );
+}
+
 export function Theater() {
     return (
         <Frame>
@@ -510,6 +536,143 @@ export function Theater() {
                     Aufführungszeit machen, geben der ganzen Gruppe zudem einen
                     besonderen Zusammenhalt. (Hannes Veraguth, 2023)
                 </Article>
+            </Container>
+        </Frame>
+    );
+}
+
+export function FMSTheater() {
+    return (
+        <Frame>
+            <Container>
+                <Title>Das FMS-Theaterprojekt</Title>
+                <ImageArticle
+                    images={[
+                        "https://www.gymoberwil.ch/fileadmin/_processed_/d/b/csm_2023_runter_auf_null_plakat_e99fd706b3.jpg",
+                    ]}
+                >
+                    Im Rahmen der Projektarbeit entsteht seit Jahren an der FMS
+                    Oberwil auch regelmässig ein grosses Theaterprojekt.
+                    Innerhalb von kurzer Zeit wird dabei unter sachkundiger
+                    Führung ein Theater auf die Beine gestellt. Die
+                    Schüler*innen übernehmen dabei verschiedenste Aufgaben von
+                    der Lichtsteuerung, der Erstellung der Requisiten und
+                    Bühnenbildern hin zur musikalischen Begleitung und natürlich
+                    auch dem eigentlichen Schauspielern. Das Projekt gipfelt
+                    dann jeweils in mehreren öffentlichen Aufführungen zwischen
+                    den Ski- und Frühjahresferien.
+                </ImageArticle>
+            </Container>
+        </Frame>
+    );
+}
+
+export function Kulturagenda() {
+    return (
+        <Frame>
+            <Container>
+                <Title>Kulturagenda</Title>
+                <ImageArticle
+                    images={[
+                        "https://www.gymoberwil.ch/fileadmin/_processed_/d/6/csm_Kulturagenda_jpeg_6a46c03a26.jpg",
+                    ]}
+                >
+                    Die Kulturagenda listet alle kulturellen Events, welche am
+                    Gymnasium Oberwil durchgeführt werden, auf. Jedes Semester
+                    wird sie wieder neu veröffentlicht.
+                    <SubTitle>Download der Kulturagenda</SubTitle>
+                    <Link alternate={"Kulturagenda"} isPdf>
+                        https://www.gymoberwil.ch/fileadmin/sources/uploads/ka41_1_auf_1_Web.pdf
+                    </Link>
+                </ImageArticle>
+            </Container>
+        </Frame>
+    );
+}
+
+export function NeuePavillonKonzerte() {
+    return (
+        <Frame>
+            <Container>
+                <Title>Neue Pavillon Konzerte</Title>
+                <ImageArticle
+                    images={[
+                        "https://www.gymoberwil.ch/fileadmin/_processed_/c/2/csm_neue_pavillon_konzerte_2024_25_97b1b34bd5.jpg",
+                    ]}
+                >
+                    Die Neuen Pavillon Konzerte (seit 2019) sind eine exklusive,
+                    nicht kommerzielle Konzertreihe in der akustisch
+                    hervorragenden, an einen Pavillon erinnernden Aula des
+                    Gymnasiums Oberwil. Der wun­derschöne neue Saal aus Holz
+                    verfügt über eine ausgezeichnete Infrastruktur (u.a. einen
+                    Konzertflü­gel Steinway D). Die Neuen Pavillon Konzerte
+                    verstehen sich als Nachfolgerin der Ikarus Pavillon
+                    Konzerte, die vom verstorbenen Klarinettisten Urs Brügger,
+                    Lehrbeauftragter am Gymnasium Ober­wil, im Expo-Pavillon
+                    hinter dem Hauptgebäude organisiert worden sind. Ziel der
+                    Konzertreihe ist es, der Bevölkerung im Leimental sowie den
+                    Lernenden, Unterrichtenden und Mitarbeitenden des
+                    Gym­nasiums einen hochwertigen Musikgenuss zu ermöglichen.
+                    <br />
+                    <br />
+                    Es finden jeweils drei Konzerte pro Saison mit
+                    unterschiedlichen Schwerpunkten statt, wobei die
+                    Konzertreihe insbesondere dem Barock und der Musik des 20.
+                    und 21. Jahrhunderts verpflichtet ist. Sehr gerne bieten wir
+                    jungen Musikerinnen und Musikern eine Plattform, um sich
+                    einem interessierten Publikum präsentieren zu können. In der
+                    Saison 22/23 fand ein viel beachtetes und rege besuchtes
+                    Barockfestival statt, in der Saison 23/24 ging ein
+                    Klavierfestival mit moderner und zeitgenössischer Musik über
+                    die Bühne und die Saison 24/25 ist fast ganz den Streichern
+                    gewidmet, die sich der Musik von Johann Sebastian Bach bis
+                    zum 21. Jahrhundert annehmen.
+                    <br />
+                    <br />
+                    Die Besetzung der Neuen Pavillon Konzerte ist jeweils sehr
+                    hochkarätig. Zu Gast waren bisher Beat Schönegg (Klavier und
+                    Komposition), Laura Schmid (Blockflöte) und das Ensemble
+                    d’Istinto, Leila Schayegh (Violine) und Martin Zimmermann
+                    (Cembalo), Béatrice Chrysomalis (Violine), Orestis
+                    Chrysomalis (Klavier und Komposition) und Erich Plüss
+                    (Violoncello und Komposition), Egidius Streiff (Violine) und
+                    Werner Bärtschi (Klavier und Komposition), Christophe Coin
+                    (Violoncello) und Martin Zimmermann (Cembalo), Maurice
+                    Steger (Blockflöte) und Sebastian Wienand (Cembalo), das
+                    Omen-Quartett (Laura Schmid, Céline Pasche, Claudius Kamp,
+                    Max Volbers), das Klavierduo Huber Thomet sowie Schülerinnen
+                    und Schüler der Talentförderung Baselland und Basel-Stadt.
+                    <br />
+                    <br />
+                    Finanziell unterstützt wird die Konzertreihe von der
+                    Raiffeisenbank Leimental, der Gemeinde Oberwil sowie von
+                    Kulturelles.BL. Das Gymnasium stellt den wunderbaren Saal
+                    und die Infrastruktur zur Ver­fügung, der Förderverein des
+                    Gymnasiums spricht sporadisch eine Defizitgarantie.
+                    Organisiert wer­den die Konzerte von Markus Zürcher
+                    (Künstlerische Leitung) und Beat Wyss (Administrative
+                    Lei­tung), beide Lehrer am Gymnasium Oberwil. Die Flyer und
+                    Plakate gestaltet Judith Eckert.
+                    <br />
+                    <br />
+                    Der „Paganini der Blockflöte“ Maurice Steger im November
+                    2022 über die Neuen Pavillon Konzerte:
+                    <br />
+                    <br />
+                    Was da passiert ist einzigartig und hat einen
+                    Qualitätsanspruch der Extraklasse. Vom bereits
+                    ange­freundeten Publikum über die hervorragende Akustik bis
+                    zur ungezwungenen Atmosphäre, die dann eben grosse
+                    Konzentration ermöglicht. Publikum Bravi!
+                    <SubTitle>Die Konzerte 2024/25</SubTitle>
+                    <Liste
+                        points={[
+                            "Sonntag, 03.11.2024 um 17.00 Uhr: Duo Poltéra Hoppe",
+                            "Sonntag, 24.11.2024 um 17.00 Uhr: Egidius Streiff",
+                            "Sonntag, 30.3.2025 um 17.00 Uhr: Norea Trio",
+                        ]}
+                    />
+                </ImageArticle>
             </Container>
         </Frame>
     );
@@ -759,6 +922,207 @@ export function Volleyball() {
                         Teilnahme an offizieller Meisterschaft / besondere
                         Begabung im Volleyball
                     </Article>
+                </ImageArticle>
+            </Container>
+        </Frame>
+    );
+}
+export function Mediothek() {
+    return (
+        <Frame>
+            <Container>
+                <Title>Mediothek</Title>
+                <Article>
+                    Die Mediothek ist für Schülerinnen und Schüler, Lehrpersonen
+                    und weitere Mitarbeitende{" "}
+                    <Bold>
+                        das zentrale Informationszentrum des Gymnasiums.
+                    </Bold>{" "}
+                    Vor Ort steht eine grosse Auswahl an unterschiedlichen
+                    Medien zur Verfügung und es können Recherchen in auswärtigen
+                    Katalogen und Datenbanken durchgeführt werden. Sie ist
+                    ausserdem ein Raum zum Arbeiten und Lesen, für Ausstellungen
+                    von Matur-, Fachmatur- und Projektarbeiten sowie ein Ort des
+                    Rückzuges während eines langen Arbeitstages. Besonders
+                    häufig werden der Computer- und Fernsehraum genutzt, sei es
+                    für den Unterricht oder zum Zeitvertreib.
+                    <br />
+                    <br />
+                    Frau Erika Bättig und Frau Sarah Döbeli helfen Ihnen gerne
+                    bei der Suche nach Medien für Vorträge oder schriftliche
+                    Arbeiten und auch zu Themen von persönlichem Interesse.
+                    <br />
+                    <br />
+                    Auch Schulungen zur Recherche in den Online-Katalogen sind
+                    auf Anfrage jederzeit möglich.
+                    <SubTitle>Mediothek im Detail</SubTitle>
+                    Unser Medienbestand umfasst ca. 35'000 Medien, die im{" "}
+                    <Link alternate={"Online-Katalog"}>
+                        https://medio-gymow.sbl.ch/
+                    </Link>{" "}
+                    ausgewiesen sind.
+                    <br />
+                    <Liste
+                        points={[
+                            "Sachbücher",
+                            "deutsche, französische, italienische, spanische und englische Belletristik",
+                            "nanoo.tv (Lehrerschaft)",
+                            "Filme auf DVD",
+                            "Hörbücher",
+                            "Musik CD",
+                            "Comic",
+                            "Zeitungen und Zeitschriften",
+                            "Berufswahlmappen",
+                            "Maturaarbeiten und ausgewählte FMS-Abschlussarbeiten",
+                            "Fotokameras, Laptops, Ton-Aufnahmegeräte, Podcast Equipment",
+                            "Diverse Spiele",
+                        ]}
+                    />
+                    <SubTitle>Recherche im Detail</SubTitle>
+                    Recherchierwebseite für Berufs- und Mittelschulbibliotheken
+                    der Schweiz: <Link>www.digithek.ch</Link>.
+                    <br />
+                    Lizenzierte Datenbanken, welche Sie via Schulnetz kostenlos
+                    nutzen können: <br />
+                    <Liste
+                        points={[
+                            "Brockhaus",
+                            "Keystone (Fotoarchiv, Bildarchiv, Grafiken)",
+                            "KLL (Kindler Literatur Lexikon) via Munzinger",
+                            "Munzinger Archiv (Personen, Länder, Chronik)",
+                            "Römpp online (Chemie, Biologie, Umwelt)",
+                            "Spektrum der Wissenschaft",
+                            "Spektrum Die Woche",
+                            "Swissdox (Medienarchiv)",
+                        ]}
+                    />
+                    Viele andere Datenbanken ohne Lizenz sind auf Digithek
+                    vorhanden. Für weitere Recherchen in Bibliothekskatalogen
+                    anderer Institute: <Link>https://swisscovery.slsp.ch</Link>
+                    <SubTitle>Öffnungszeiten</SubTitle>
+                    Montag bis Freitag: 07.45 - 16.30 Uhr <br />
+                    Samstag: geschlossen
+                    <br />
+                    <br />
+                    Tel. 061 552 18 44
+                    <br />
+                    Mediothek: <Email>mediothek.gymow@sbl.ch</Email>
+                </Article>
+            </Container>
+        </Frame>
+    );
+}
+export function CucinaCollinare() {
+    return (
+        <Frame>
+            <Container>
+                <Title>Cucina Collinare</Title>
+                <ImageArticle
+                    images={[
+                        "https://www.gymoberwil.ch/fileadmin/_processed_/9/c/csm_Cucina_Collinare_866518d853.jpg",
+                        "https://www.gymoberwil.ch/fileadmin/_processed_/9/4/csm_esb_logo_1d3308f031.jpg",
+                    ]}
+                >
+                    <SubTitle>Unser Angebot</SubTitle>
+                    Die Cucina lässt seinen Kund:innen in der
+                    abwechslungsreichen, saisonal-regionalen Küche die Wahl, so
+                    dass unser Angebot von vegetarischer Kost über Mahlzeiten
+                    mit Fleisch oder Fisch bis hin zu trendigem, jedoch
+                    hausgemachtem Fastfood reicht. Wir leisten damit einen
+                    Beitrag zu einer gesundheitsbewussten Ernährung, gehen aber
+                    auch offen auf die Wünsche der Schüler:innen sowie auf
+                    diejenigen des Lehrkörpers ein. Täglich wechselnd bieten wir
+                    ein vegetarisches, ein Fleisch-/Fischmenu und ein
+                    Pastagericht an. Zusätzlich stehen frische, knackige Salate
+                    vom Buffet, kreative Sandwiches, Schnitzelburger, Souvlaki,
+                    Hamburger, Pizza, Muffins, Schoggiweggli, warme und kalte
+                    Kaffeegetränke, Softdrinks sowie eine Auswahl an
+                    Kioskartikeln für unsere Gäste bereit.
+                    <SubTitle>Menuplanung</SubTitle>
+                    <Link alternate={"Menüplan vom 27.01. - 31.01.2025"}>
+                        https://www.gymoberwil.ch/fileadmin/sources/downloads/schulleben/cantina/woche_05.pdf
+                    </Link>{" "}
+                    <br />
+                    <Link alternate={"Menüplan vom 20.01. - 24.01.2025"}>
+                        https://www.gymoberwil.ch/fileadmin/sources/downloads/schulleben/cantina/woche_04.pdf
+                    </Link>
+                    <br />
+                    <SubTitle>Unsere Preise</SubTitle>
+                    <Link alternate={"Preisliste zum Downloaden"}>
+                        https://www.gymoberwil.ch/fileadmin/sources/downloads/schulleben/cantina/Preisliste_Cucina_Collinare.pdf
+                    </Link>
+                    <SubTitle>Unser Träger</SubTitle>
+                    Die Cucina ist ein Betrieb des ESB in Liestal{"  "}
+                    <Link>https://www.esb-bl.ch/</Link>, der professionell
+                    Menschen in schwierigen Lebenssituationen im Wohnen, in der
+                    Freizeit, bei der Arbeit und im sozialen Alltag begleitet.
+                    <SubTitle>Unsere Öffnungszeiten</SubTitle>
+                    Montag bis Freitag: 07:30 - 15:30 Uhr <br />
+                    Mittagessen: 11:30 - 13:30 Uhr
+                    <SubTitle>Telefon</SubTitle>
+                    +41 61 965 28 99
+                </ImageArticle>
+            </Container>
+        </Frame>
+    );
+}
+export function Foerderverein() {
+    return (
+        <Frame>
+            <Container>
+                <Title>Förderverein</Title>
+                <ImageArticle
+                    images={[
+                        "https://www.gymoberwil.ch/fileadmin/sources/downloads/schulleben/foerderverein/F%C3%B6rderverein_jpeg.JPG",
+                    ]}
+                >
+                    Sein Ziel ist die Förderung der Zusammengehörigkeit aller am
+                    Gymnasium Oberwil interessierten Personen, insbesondere
+                    seiner ehemaligen Schüler/innen und Lehrer/innen. <br />
+                    <br /> Der Förderverein kann:{" "}
+                    <Liste
+                        points={[
+                            "Projekte und Initiativen des Gymnasium Oberwil ideell und finanziell unterstützen",
+                            "an Veranstaltungen des Gymnasium Oberwil mitwirken",
+                            "zur Berufs- und Studienberatung beitragen",
+                            "einzelnen Schüler/innen materielle Hilfe leisten",
+                            "die Anliegen der Schule in der Öffentlichkeit unterstützen",
+                        ]}
+                    />{" "}
+                    <br />
+                    Der Verein wurde am 6. September 2005 gegründet. Die ersten
+                    Mitgliederversammlung haben am 29. März 2006 und am 21. März
+                    2007 stattgefunden. <br /> Kontakt:{" "}
+                    <Email>sekretariat.gymow@sbl.ch</Email>
+                    <SubTitle>Vorstand</SubTitle>
+                    <SubSubTitle>Präsident</SubSubTitle>
+                    Stephan Auer
+                    <SubSubTitle>Vizepräsidentin</SubSubTitle>
+                    Monika Lichtin
+                    <SubSubTitle>Kassier</SubSubTitle>
+                    Oliver Balmer
+                    <SubSubTitle>Kassier</SubSubTitle>
+                    Klaus Killenberger
+                    <br />
+                    Jonas Zimmermann
+                    <SubSubTitle>Beisitz</SubSubTitle>
+                    Oliver Balmer <br />
+                    Philipp Bollinger <br />
+                    Philipp Jordi <br />
+                    Marc Rohner <br />
+                    Hannes Veraguth <br />
+                    <SubTitle>Dokumente</SubTitle>
+                    <Link isPdf alternate={"Beitrittserklärung"}>
+                        https://www.gymoberwil.ch/fileadmin/sources/downloads/schulleben/foerderverein/beitrittserkl%C3%A4rung_f%C3%B6rderverein.pdf
+                    </Link>{" "}
+                    <br />
+                    <Link isPdf alternate={"Statuten des Fördervereins"}>
+                        https://www.gymoberwil.ch/fileadmin/sources/downloads/schulleben/foerderverein/statuten_2015_09_09.pdf
+                    </Link>
+                    <br />
+                    <Link alternate={"Vorlage Einzahlungsschein"} isPdf>
+                        https://www.gymoberwil.ch/fileadmin/sources/downloads/schulleben/foerderverein/jpeg_esr.JPG
+                    </Link>
                 </ImageArticle>
             </Container>
         </Frame>
