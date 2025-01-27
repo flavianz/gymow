@@ -1,6 +1,8 @@
 import styles from "./Frame.module.css";
-import Header from "../Header/Header.tsx";
 import { Link, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import BurgerMenu from "../../assets/menu-burger-horizontal-svgrepo-com.svg";
+import DownArrow from "../../assets/down-arrow2-svgrepo-com.svg";
 
 const links: {
     [key: string]: {
@@ -139,20 +141,69 @@ const links: {
 
 export default function Frame({ children }: { children: any }) {
     const location = useLocation();
+    const [ratio, setRatio] = useState<number>(
+        window.innerWidth / window.innerHeight,
+    );
+    const [mobileNavOpen, setMobileNavOpen] = useState(false);
+    useEffect(() => {
+        function update() {
+            setRatio(window.innerWidth / window.innerHeight);
+        }
+        window.addEventListener("resize", update);
+        return () => window.removeEventListener("resize", update);
+    }, []);
+
     return (
         <div id={styles.container}>
-            <Header />
-            <div id={styles.lower}>
-                <div id={styles.navbar}>
+            <div id={styles.headerContainer}>
+                <a id={styles.icon} href={"/"}>
+                    <span style={{ fontWeight: "700" }}>Gym</span> Oberwil
+                </a>
+                {ratio > 0.7 ? (
+                    <div>
+                        <a href={"/#/events"} className={styles.link}>
+                            Events
+                        </a>
+                        <a href={"/#/aktuelles"} className={styles.link}>
+                            Aktuelles
+                        </a>
+                        <a href={"/#/kontakt"} className={styles.link}>
+                            Kontakt
+                        </a>
+                    </div>
+                ) : (
+                    <img
+                        src={BurgerMenu}
+                        alt="Menu"
+                        id={styles.burgerMenu}
+                        onClick={() => setMobileNavOpen(!mobileNavOpen)}
+                    />
+                )}
+            </div>
+            <div hidden={!mobileNavOpen} id={styles.mobileNavContainer}>
+                <div id={styles.mobileLinksContainer}>
+                    <p>Events</p>
+                    <p>Aktuelles</p>
+                    <p>Kontakt</p>
+                </div>
+                <div id={styles.mobileNav}>
                     {Object.entries(links).map((item, key) => {
                         return (
                             <div id={styles.navbarItem} key={key}>
-                                <Link
-                                    to={item[1].main}
-                                    className={styles.mainLink}
-                                >
-                                    {item[0]}
-                                </Link>
+                                <div id={styles.mainLinkContainer}>
+                                    <Link
+                                        to={item[1].main}
+                                        className={styles.mainLink}
+                                        onClick={() => setMobileNavOpen(false)}
+                                    >
+                                        {item[0]}
+                                    </Link>
+                                    <img
+                                        src={DownArrow}
+                                        alt=""
+                                        className={styles.downArrow}
+                                    />
+                                </div>
                                 <div className={styles.subContainer}>
                                     {Object.entries(item[1]).map((sub, key) => {
                                         if (sub[0] == "main") {
@@ -183,6 +234,9 @@ export default function Frame({ children }: { children: any }) {
                                                         ? styles.linkOpen
                                                         : "")
                                                 }
+                                                onClick={() =>
+                                                    setMobileNavOpen(false)
+                                                }
                                                 key={key}
                                             >
                                                 {sub[0]}
@@ -194,19 +248,87 @@ export default function Frame({ children }: { children: any }) {
                         );
                     })}
                 </div>
+            </div>
+            {!mobileNavOpen && (
+                <div id={styles.lower}>
+                    {ratio > 1 && (
+                        <div id={styles.navbar}>
+                            {Object.entries(links).map((item, key) => {
+                                return (
+                                    <div id={styles.navbarItem} key={key}>
+                                        <Link
+                                            to={item[1].main}
+                                            className={styles.mainLink}
+                                        >
+                                            {item[0]}
+                                        </Link>
+                                        <div className={styles.subContainer}>
+                                            {Object.entries(item[1]).map(
+                                                (sub, key) => {
+                                                    if (sub[0] == "main") {
+                                                        return undefined;
+                                                    }
+                                                    const selected =
+                                                        typeof sub[1] ===
+                                                        "string"
+                                                            ? location.pathname.startsWith(
+                                                                  sub[1],
+                                                              )
+                                                            : Object.values(
+                                                                  sub[1],
+                                                              )
+                                                                  .map(
+                                                                      (i) =>
+                                                                          i[1],
+                                                                  )
+                                                                  .includes(
+                                                                      location.pathname,
+                                                                  );
 
-                <div id={styles.contentTab}>
-                    <div>{getTabBar(location.pathname)}</div>
-                    <div id={styles.content}>
-                        {children}
-                        <div id={styles.footerContainer}>
-                            <p>© {new Date().getFullYear()} Flavian Züllig</p>
-                            <p>sekretariat.gymow@sbl.ch</p>
-                            <p>061 552 18 18</p>
+                                                    return (
+                                                        <Link
+                                                            to={
+                                                                typeof sub[1] ===
+                                                                "string"
+                                                                    ? sub[1]
+                                                                    : sub[1][0][1]
+                                                            }
+                                                            className={
+                                                                styles.subNav +
+                                                                " " +
+                                                                (selected
+                                                                    ? styles.linkOpen
+                                                                    : "")
+                                                            }
+                                                            key={key}
+                                                        >
+                                                            {sub[0]}
+                                                        </Link>
+                                                    );
+                                                },
+                                            )}
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    )}
+
+                    <div id={styles.contentTab}>
+                        <div>{getTabBar(location.pathname)}</div>
+                        <div id={styles.content}>
+                            {children}
+                            <div id={styles.footerContainer}>
+                                <p>
+                                    © {new Date().getFullYear()} Flavian Züllig
+                                </p>
+                                <p>sekretariat.gymow@sbl.ch</p>
+                                <p>061 552 18 18</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            )}
         </div>
     );
 }
