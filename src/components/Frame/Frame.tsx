@@ -53,10 +53,10 @@ const links: {
         Förderverein: "/schulleben/foerderverein",
     },
     Maturitätsabteilung: {
-        main: "/ma/maturitaesabteilung",
-        Aufnahmebedingungen: "/ma/aufnahmebedingungen",
+        main: "/ma",
+        Aufnahmebedingungen: "/ma/ma-aufnahmebedingungen",
         Profile: "/ma/profile",
-        Stundentafel: "/ma/stundentafel",
+        Stundentafel: "/ma/ma-stundentafel",
         "Wahlkurs & Ergänzungsfach": "/ma/wahlkurs-ergaenzungsfach",
         Immersionsunterricht: "/ma/immersionsunterricht",
         Sonderwoche: "/ma/sonderwoche",
@@ -75,7 +75,7 @@ const links: {
                 "/ma/maturitaetspruefung/aktuelle-pruefungen",
             ],
         ],
-        Kosten: "/ma/kosten",
+        Kosten: "/ma/ma-kosten",
     },
     FMS: {
         main: "/fms",
@@ -224,6 +224,9 @@ function getTabBar(pathname: string) {
             tabs = currTabs[0];
             break;
         }
+    }
+    if (tabs.length === 0) {
+        return undefined;
     }
     return (
         <div id={styles.tabContainer}>

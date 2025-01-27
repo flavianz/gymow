@@ -29,6 +29,10 @@ import {
     Unihockey,
     Volleyball,
 } from "./sites/Schulleben.tsx";
+import {
+    Aufnahmebedingungen,
+    Maturitätsabteilung,
+} from "./sites/Maturitätsabteilung.tsx";
 
 const router = createHashRouter([
     {
@@ -130,6 +134,14 @@ const router = createHashRouter([
     {
         path: "/schulleben/foerderverein",
         element: <Foerderverein />,
+    },
+    {
+        path: "/ma",
+        element: <Maturitätsabteilung />,
+    },
+    {
+        path: "/ma/ma-aufnahmebedingungen",
+        element: <Aufnahmebedingungen />,
     },
 ]);
 
