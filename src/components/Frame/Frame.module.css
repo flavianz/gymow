@@ -129,6 +129,7 @@
 #burgerMenu {
     height: 2rem;
     width: 2rem;
+    margin-left: 2vw;
 }
 #burgerMenu:hover {
     cursor: pointer;
@@ -169,4 +170,8 @@
 }
 .downArrow {
     height: 2rem;
+}
+#linkContainer {
+    display: flex;
+    align-items: center;
 }

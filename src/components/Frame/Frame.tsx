@@ -159,8 +159,8 @@ export default function Frame({ children }: { children: any }) {
                 <a id={styles.icon} href={"/"}>
                     <span style={{ fontWeight: "700" }}>Gym</span> Oberwil
                 </a>
-                {ratio > 0.7 ? (
-                    <div>
+                {ratio > 0.8 ? (
+                    <div id={styles.linkContainer}>
                         <a href={"/#/events"} className={styles.link}>
                             Events
                         </a>
@@ -170,6 +170,14 @@ export default function Frame({ children }: { children: any }) {
                         <a href={"/#/kontakt"} className={styles.link}>
                             Kontakt
                         </a>
+                        {ratio < 1 && (
+                            <img
+                                src={BurgerMenu}
+                                alt="Menu"
+                                id={styles.burgerMenu}
+                                onClick={() => setMobileNavOpen(!mobileNavOpen)}
+                            />
+                        )}
                     </div>
                 ) : (
                     <img
