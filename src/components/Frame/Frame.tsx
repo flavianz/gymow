@@ -2,7 +2,6 @@ import styles from "./Frame.module.css";
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import BurgerMenu from "../../assets/menu-burger-horizontal-svgrepo-com.svg";
-import DownArrow from "../../assets/down-arrow2-svgrepo-com.svg";
 
 const links: {
     [key: string]: {
@@ -140,11 +139,13 @@ const links: {
 };
 
 export default function Frame({ children }: { children: any }) {
+    const isTouch = "ontouchstart" in document.documentElement;
     const location = useLocation();
     const [ratio, setRatio] = useState<number>(
         window.innerWidth / window.innerHeight,
     );
     const [mobileNavOpen, setMobileNavOpen] = useState(false);
+    const [openedTabMobile, setOpenedTabMobile] = useState<number[]>([]);
     useEffect(() => {
         function update() {
             setRatio(window.innerWidth / window.innerHeight);
@@ -197,7 +198,17 @@ export default function Frame({ children }: { children: any }) {
                 <div id={styles.mobileNav}>
                     {Object.entries(links).map((item, key) => {
                         return (
-                            <div id={styles.navbarItem} key={key}>
+                            <div
+                                id={styles.navbarItem}
+                                key={key}
+                                className={
+                                    (openedTabMobile.includes(key)
+                                        ? styles.navbarItemOpen
+                                        : "") +
+                                    " " +
+                                    (!isTouch ? styles.navbarItemHover : "")
+                                }
+                            >
                                 <div id={styles.mainLinkContainer}>
                                     <Link
                                         to={item[1].main}
@@ -206,11 +217,28 @@ export default function Frame({ children }: { children: any }) {
                                     >
                                         {item[0]}
                                     </Link>
-                                    <img
-                                        src={DownArrow}
-                                        alt=""
-                                        className={styles.downArrow}
-                                    />
+                                    {Object.values(item[1]).length > 1 && (
+                                        <DownArrow
+                                            onClick={() => {
+                                                if (
+                                                    openedTabMobile.includes(
+                                                        key,
+                                                    )
+                                                ) {
+                                                    setOpenedTabMobile([
+                                                        ...openedTabMobile.filter(
+                                                            (i) => i != key,
+                                                        ),
+                                                    ]);
+                                                } else {
+                                                    setOpenedTabMobile([
+                                                        ...openedTabMobile,
+                                                        key,
+                                                    ]);
+                                                }
+                                            }}
+                                        />
+                                    )}
                                 </div>
                                 <div className={styles.subContainer}>
                                     {Object.entries(item[1]).map((sub, key) => {
@@ -263,7 +291,11 @@ export default function Frame({ children }: { children: any }) {
                         <div id={styles.navbar}>
                             {Object.entries(links).map((item, key) => {
                                 return (
-                                    <div id={styles.navbarItem} key={key}>
+                                    <div
+                                        id={styles.navbarItem}
+                                        key={key}
+                                        className={styles.navbarItemHover}
+                                    >
                                         <Link
                                             to={item[1].main}
                                             className={styles.mainLink}
@@ -375,5 +407,23 @@ function getTabBar(pathname: string) {
                 );
             })}
         </div>
+    );
+}
+
+function DownArrow({ onClick }: { onClick: () => void }) {
+    return (
+        <svg
+            className={styles.downArrow}
+            viewBox="0 0 100 100"
+            onClick={onClick}
+        >
+            <g>
+                <path
+                    d="M78.466,35.559L50.15,63.633L22.078,35.317c-0.777-0.785-2.044-0.789-2.828-0.012s-0.789,2.044-0.012,2.827L48.432,67.58
+		c0.365,0.368,0.835,0.563,1.312,0.589c0.139,0.008,0.278-0.001,0.415-0.021c0.054,0.008,0.106,0.021,0.16,0.022
+		c0.544,0.029,1.099-0.162,1.515-0.576l29.447-29.196c0.785-0.777,0.79-2.043,0.012-2.828S79.249,34.781,78.466,35.559z"
+                />
+            </g>
+        </svg>
     );
 }
